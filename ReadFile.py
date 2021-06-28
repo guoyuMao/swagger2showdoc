@@ -1,7 +1,7 @@
 import json
 
 # swagger-json文件
-base_file_path = r"out/{}.md"
+base_file_path = r"showdoc_md/{}.md"
 
 
 # 一个请求的模版
@@ -479,13 +479,13 @@ def create_file(file_name,str):
             testOne.write("\r\n")
             testOne.write(str)
     except FileNotFoundError:
-        print("not found file")
+        print("not found swagger_json")
     except LookupError:
         print("指定了未知编码")
     except UnicodeDecodeError:
         print("读取文件时解码错误")
 
 if __name__ == '__main__':
-    file_path = r"file/test.json"
+    file_path = r"swagger_json/test.json"
     (project_title, host, base_path,paths, definitions) = resolve_json(file_path)
     resolve_paths(base_path,paths,definitions)
